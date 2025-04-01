@@ -1,0 +1,342 @@
+/* Admin Dashboard Specific Styles */
+
+.adminDashboard {
+  width: 100%;
+}
+
+/* Admin Stats Section */
+.adminStatsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.adminStatsCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.adminStatsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.adminStatsCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+}
+
+.registeredCard::before {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+}
+
+.checkedInCard::before {
+  background: linear-gradient(90deg, #0ea5e9, #2dd4bf);
+}
+
+.checkedOutCard::before {
+  background: linear-gradient(90deg, #f43f5e, #fb7185);
+}
+
+.satisfactionCard::before {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.adminStatsValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.registeredValue {
+  background-image: linear-gradient(90deg, #4f46e5, #7c3aed);
+}
+
+.checkedInValue {
+  background-image: linear-gradient(90deg, #0ea5e9, #2dd4bf);
+}
+
+.checkedOutValue {
+  background-image: linear-gradient(90deg, #f43f5e, #fb7185);
+}
+
+.satisfactionValue {
+  background-image: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.adminStatsLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Event List Styling */
+.eventsList {
+  margin-bottom: 2rem;
+}
+
+.eventItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.eventItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.eventInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventTitle {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.eventMeta {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eventBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.approvedBadge {
+  background: linear-gradient(90deg, #10b981, #34d399);
+  color: white;
+}
+
+.pendingBadge {
+  background: linear-gradient(90deg, #0ea5e9, #2dd4bf);
+  color: white;
+}
+
+/* Committee Performance Styles */
+.committeePerformance {
+  margin-bottom: 1.5rem;
+}
+
+.performanceItem {
+  margin-bottom: 1.25rem;
+}
+
+.performanceHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.performanceLabel {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.performanceValue {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.performanceBar {
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.performanceFill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width 0.5s ease;
+}
+
+/* Reimbursement Requests */
+.reimbursementList {
+  margin-bottom: 1.5rem;
+}
+
+.reimbursementItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.reimbursementItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.reimbursementInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.reimbursementTitle {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.reimbursementMeta {
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+.reviewButton {
+  background: linear-gradient(90deg, var(--primary), #7c3aed);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reviewButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Messages Styling */
+.messagesList {
+  margin-bottom: 1.5rem;
+}
+
+.messageItem {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.messageItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.messageHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.messageAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.avatarPrimary {
+  background: linear-gradient(135deg, var(--primary), #7c3aed);
+}
+
+.avatarSecondary {
+  background: linear-gradient(135deg, var(--secondary), #fb7185);
+}
+
+.avatarAccent {
+  background: linear-gradient(135deg, var(--accent), #2dd4bf);
+}
+
+.messageUser {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageUsername {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.messageRole {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.messageContent {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.viewAllButton {
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: var(--foreground);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.viewAllButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .adminStatsSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .adminStatsSection {
+    grid-template-columns: 1fr;
+  }
+} 

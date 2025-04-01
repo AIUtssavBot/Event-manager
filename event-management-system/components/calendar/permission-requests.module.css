@@ -1,0 +1,442 @@
+.container {
+  margin-top: 2rem;
+  background-color: var(--background);
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.75rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark, var(--primary)) 100%);
+  color: var(--primary-foreground);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.dateFilter {
+  margin-left: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  opacity: 0.95;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.filters {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.filterSelect {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.875rem;
+  color: var(--primary-foreground);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterSelect:hover, .filterSelect:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: var(--muted-foreground);
+  background-color: var(--card);
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.emptyState p {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  max-width: 24rem;
+  line-height: 1.6;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  background-color: var(--card);
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.thContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table th {
+  background-color: var(--accent);
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent-foreground);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table th:first-child {
+  border-top-left-radius: 0.5rem;
+}
+
+.table th:last-child {
+  border-top-right-radius: 0.5rem;
+}
+
+.table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--foreground);
+  transition: all 0.15s;
+}
+
+.table tr:not(.detailsRow):hover td {
+  background-color: var(--accent);
+}
+
+.expandedRow {
+  background-color: var(--accent);
+}
+
+.expandedRow td {
+  border-bottom: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s;
+}
+
+.statusBadge:hover {
+  transform: translateY(-1px);
+}
+
+.statusPending {
+  background-color: rgba(234, 179, 8, 0.15);
+  color: #b45309;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.statusApproved {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.statusDenied {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.detailsRow {
+  background-color: var(--card);
+}
+
+.detailsRow td {
+  padding: 0;
+}
+
+.requestDetails {
+  padding: 1.5rem 2rem 2rem;
+  background-color: var(--card);
+  border-top: 1px dashed var(--border);
+  box-shadow: inset 0 5px 10px -5px rgba(0, 0, 0, 0.05);
+}
+
+.detailItem {
+  margin-bottom: 1.5rem;
+}
+
+.detailItem h4 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detailIcon {
+  color: var(--primary);
+}
+
+.detailItem h4::before {
+  content: "";
+  display: block;
+  width: 0.25rem;
+  height: 1rem;
+  background-color: var(--primary);
+  border-radius: 1rem;
+}
+
+.detailItem p {
+  margin: 0;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  padding: 0.75rem 1rem;
+  background-color: var(--background);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+.reviewMeta {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted-foreground);
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.reviewActions {
+  margin-top: 1.5rem;
+}
+
+.reviewActions h4 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reviewActions h4::before {
+  content: "";
+  display: block;
+  width: 0.25rem;
+  height: 1rem;
+  background-color: var(--primary);
+  border-radius: 1rem;
+}
+
+.commentInput {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  background-color: var(--background);
+  color: var(--foreground);
+  resize: vertical;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.commentInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.reviewButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.reviewButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.reviewButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.approveButton {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #047857;
+}
+
+.approveButton:hover {
+  background-color: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.denyButton {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #b91c1c;
+}
+
+.denyButton:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem 1.25rem;
+  }
+  
+  .filters {
+    width: 100%;
+  }
+  
+  .filterSelect {
+    flex-grow: 1;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .reviewButtons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .requestDetails {
+    padding: 1.25rem 1rem 1.5rem;
+  }
+}
+
+/* Add this for loading state */
+.loadingState {
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted-foreground);
+  background-color: var(--card);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Ensure this exists */
+.editButton {
+  color: var(--primary);
+}
+
+/* Add pending message style */
+.pendingMessage {
+  background-color: var(--accent);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 4px solid var(--primary);
+}
+
+.pendingMessage p {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-style: italic;
+} 
