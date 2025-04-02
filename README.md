@@ -1,6 +1,9 @@
 # Event Management System UI 🎉
 
-![Event Manager UI](https://your-image-link.com) <!-- Add a screenshot of your UI here -->
+Event Manager UI
+![Screenshot from 2025-04-02 12-09-25](https://github.com/user-attachments/assets/861d47af-2e5b-49d7-aac3-46844f874bd4)![image](https://github.com/user-attachments/assets/38b45884-5fae-4897-a54a-03c96986982e)
+
+
 
 ## 🌟 Overview
 The **Event Management System UI** is a modern, interactive, and intuitive frontend built using **React**. It provides a seamless experience for managing events, attendees, and schedules with a sleek user interface.
